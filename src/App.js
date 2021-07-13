@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
+import './App.scss';
+import NavBarIndex from './Components/Sections/Navabar/Index';
+import LoadBackdrop from "./Components/Utils/BackDrop/BackDrop";
+import Dashboard from './Pages/Home/Dashboard';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  function getData() {
+    return dispatch => {
+      axios.get("https://api.mocklets.com/mock68182/screentime")
+      .then(res =>
+          dispatch({
+            type: "FETCH_DATA",
+            data: res.data
+          })
+      );
+    };
+  }
+  useEffect(() => {
+    dispatch(getData());
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <LoadBackdrop/>
+      <div className="App">
+        <NavBarIndex/>
+        <Dashboard/>
+      </div>
+    </Router>
   );
 }
 

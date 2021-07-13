@@ -1,0 +1,65 @@
+body {
+  color: rgb(75, 75, 75);
+  background-color: #edeef0;
+}
+.txt-grey{
+  color: rgba(75, 75, 75, 0.925) !important;
+}
+.dash-board{
+  height:90vh;
+  width: 100vw;
+  .row{
+    height: 75vh;
+  }
+  .paper{
+    border-radius:10px;
+  }
+  
+}
+.custom-filter{
+  .MuiPopover-paper {
+    top:120px !important;
+    right:16px !important;
+    left:none !important;
+    max-width: calc(100% - 721px) !important;
+  }
+  .MuiDrawer-paper {
+    border-radius: 20px 20px 0px 0px !important;
+  }
+}
+.screen-time{
+  box-sizing: border-box;
+  height: 100%;
+  .inner{
+    height: 65vh;
+    width: 100%;
+  }
+}
+.ht-100{
+  height: 100%;
+}
+.wt-100{
+  width: 100%;
+}
+.no-style{
+  padding:0px;
+  margin:0px;
+}
+.progress{
+  height: 1.5rem !important;
+  border-radius: 30px !important;
+}
+.progress-bar{
+  background-color: #2FED51 !important;
+  color: rgb(75, 75, 75) !important;
+
+}
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+}
+
+
+a{
+  text-decoration: none !important;
+  color: rgba(75, 75, 75, 0.925) !important;
+}
