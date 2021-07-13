@@ -119,7 +119,10 @@ export default function Dashboard() {
                </div>
                <div className='col-12 col-lg-6 row ht-100 no-style'>
                     <div 
-                    className={`col-12 mb-4 ${filter!=='class'&&filter!=='study'?'d-block':'d-none'}`}>
+                    className={`col-12 mb-4 
+                    ${!filter?'d-block':filter!=='class'&&filter!=='study'?'d-block':'d-none'}
+                    
+                    `}>
                         <Paper className='ht-100 paper'>
                             <FreeTimeIndex/>
                         </Paper>
