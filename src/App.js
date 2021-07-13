@@ -34,14 +34,13 @@ function App() {
       <Route exact path="/">
         <Redirect to="/summary?filter=all" />
       </Route>
-      <Route exact path="/summary">
-        <Redirect to="/summary?filter=all" />
+      <Route  path="/summary">
+        <LoadBackdrop/>
+        <div className="App">
+          <NavBarIndex/>
+          <Dashboard/>
+        </div>
       </Route>
-      <LoadBackdrop/>
-      <div className="App">
-        <NavBarIndex/>
-        <Dashboard/>
-      </div>
     </Router>
   );
 }
