@@ -77,7 +77,7 @@ const DoughnutChart = ({Label,Value,TitleValue,Title}) => {
         marginTop: '-35px'
     }}>
       <h2>{Title}</h2>
-      <h3>{TitleValue}</h3>
+      <h3>{TitleValue} mins</h3>
     </div>
   </div>
 )};
