@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
-  BrowserRouter as Router, Redirect, Route
+  BrowserRouter as Router, Redirect, Route, Switch
 } from "react-router-dom";
 import './App.scss';
 import NavBarIndex from './Components/Sections/Navabar/Index';
@@ -31,16 +31,18 @@ function App() {
 
   return (
     <Router>
-      <Route exact path="/">
-        <Redirect to="/summary?filter=all" />
-      </Route>
-      <Route  path="/summary">
-        <LoadBackdrop/>
-        <div className="App">
-          <NavBarIndex/>
-          <Dashboard/>
-        </div>
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/summary" />
+        </Route>
+        <Route  path="/summary">
+          <LoadBackdrop/>
+          <div className="App">
+            <NavBarIndex/>
+            <Dashboard/>
+          </div>
+        </Route>
+      </Switch>
     </Router>
   );
 }

@@ -10,11 +10,11 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import SearchIcon from '@material-ui/icons/Search';
 import React from 'react';
 import DatePickers from '../../Utils/DatePicker/DatePicker';
 import Logo from './Logo.svg';
-
 const useStyles = makeStyles((theme) => ({
   root:{
     color:' #484848',
@@ -144,6 +144,11 @@ export default function PrimarySearchAppBar() {
     >
         <MenuItem>
             <DatePickers/>
+        </MenuItem>
+        <MenuItem>
+        <Button >
+              <PhoneIphoneIcon className='mr-2 '/> Add Device
+            </Button> 
         </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <Button

@@ -23,17 +23,7 @@ export default function ScreenTimeIndex() {
 
     const dataFormat=()=>{
       if(ChartData){
-        if(Filter==='all'){
-          Object.keys(ChartData).map(function(key) {
-              if(key==='totalTime'){
-                TotalTime=ChartData[key].total
-              }else{
-              Label.push(`${key} - ${ChartData[key].total} mins`)
-              Value.push(ChartData[key].total)
-              }
-          })
-          ChartTitle='All Screen Time'
-        }else if(Filter==='class'){
+         if(Filter==='class'){
           Label.push(`${'totalTime'} - ${ChartData['totalTime'].total} mins`)
           Value.push(Number(ChartData['totalTime'].total)-Number(ChartData['classTime'].total))
           Label.push(`${'classTime'} - ${ChartData['classTime'].total} mins`)
@@ -55,6 +45,16 @@ export default function ScreenTimeIndex() {
           Value.push(ChartData['freeTime'].total)
           TotalTime=ChartData['totalTime'].total
           ChartTitle='Free Time'
+        }else{
+            Object.keys(ChartData).map(function(key) {
+                if(key==='totalTime'){
+                  TotalTime=ChartData[key].total
+                }else{
+                Label.push(`${key} - ${ChartData[key].total} mins`)
+                Value.push(ChartData[key].total)
+                }
+            })
+            ChartTitle='All Screen Time'
         }
       }
     }
