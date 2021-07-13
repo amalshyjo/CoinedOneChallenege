@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
-  BrowserRouter as Router
+  BrowserRouter as Router, Redirect, Route
 } from "react-router-dom";
 import './App.scss';
 import NavBarIndex from './Components/Sections/Navabar/Index';
@@ -31,6 +31,9 @@ function App() {
 
   return (
     <Router>
+      <Route exact path="/">
+        <Redirect to="/summary?filter=all" />
+      </Route>
       <LoadBackdrop/>
       <div className="App">
         <NavBarIndex/>
