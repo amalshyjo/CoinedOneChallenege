@@ -1,3 +1,5 @@
+import AddIcon from '@material-ui/icons/Add';
+import TimerIcon from '@material-ui/icons/Timer';
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -7,6 +9,7 @@ import {
 import './App.scss';
 import NavBarIndex from './Components/Sections/Navabar/Index';
 import LoadBackdrop from "./Components/Utils/BackDrop/BackDrop";
+import SpeedDialFAB from "./Components/Utils/SpeedDial/SpeedDial";
 import Dashboard from './Pages/Home/Dashboard';
 
 function App() {
@@ -28,6 +31,11 @@ function App() {
     dispatch(getData());
   }, []);
 
+  const actions=[
+    {icon:<TimerIcon/>,text:'Extend Free Time'},
+    {icon:<AddIcon/>,text:'Add Device'}
+  ]
+
 
   return (
     <Router>
@@ -40,6 +48,9 @@ function App() {
           <div className="App">
             <NavBarIndex/>
             <Dashboard/>
+            <div className='d-block d-lg-none'>
+              <SpeedDialFAB actions={actions}/>
+            </div>
           </div>
         </Route>
       </Switch>

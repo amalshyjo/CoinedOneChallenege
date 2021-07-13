@@ -28,7 +28,8 @@ export default function MenuDrawer(props) {
   return (
     <div>
         <Button onClick={toggleDrawer('bottom', true)} color='primary'> 
-        Filter <FilterListIcon/></Button>
+          <b>Filter <FilterListIcon/></b>
+        </Button>
         <Drawer anchor={'bottom'} open={state['bottom']} className='custom-filter '
         onClose={toggleDrawer('bottom', false)}>
           <div onClick={toggleDrawer('bottom', false)}>

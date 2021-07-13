@@ -86,6 +86,8 @@ function MenuOptions() {
 }
 
 export default function Dashboard() {
+    let query = useQuery();
+    const filter=query.get("filter")
     return (
         <div className='dash-board container'>
             <div className='row'>
@@ -116,7 +118,8 @@ export default function Dashboard() {
                     </Paper>
                </div>
                <div className='col-12 col-lg-6 row ht-100 no-style'>
-                    <div className='col-12 mb-4'>
+                    <div 
+                    className={`col-12 mb-4 ${filter!=='class'&&filter!=='study'?'d-block':'d-none'}`}>
                         <Paper className='ht-100 paper'>
                             <FreeTimeIndex/>
                         </Paper>

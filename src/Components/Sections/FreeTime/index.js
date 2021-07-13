@@ -1,6 +1,6 @@
 import { Button } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
 import SettingsIcon from '@material-ui/icons/Settings';
+import TimerIcon from '@material-ui/icons/Timer';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -37,7 +37,7 @@ export default function FreeTimeIndex() {
                     <SettingsIcon/>Change Restriction
                 </Button>
                 <Button variant='outlined' color='primary' size='small' className='m-1'>
-                    <AddIcon/>Extend Free-Time
+                    <TimerIcon/>Extend Free-Time
                 </Button>
             </div>
 

@@ -17,8 +17,8 @@ export default function SimpleMenu(props) {
   return (
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" 
-      color='primary' onClick={handleClick}>
-        Filter <FilterListIcon/>
+      color='primary' onClick={handleClick} >
+        <b>Filter <FilterListIcon/></b>
       </Button>
       <Menu  className='custom-filter '
         id="simple-menu"

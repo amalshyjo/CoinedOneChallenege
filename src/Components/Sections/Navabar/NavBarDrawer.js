@@ -1,7 +1,6 @@
 import { Button } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
-import InputBase from '@material-ui/core/InputBase';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,14 +10,14 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
-import SearchIcon from '@material-ui/icons/Search';
 import React from 'react';
 import DatePickers from '../../Utils/DatePicker/DatePicker';
 import Logo from './Logo.svg';
 const useStyles = makeStyles((theme) => ({
   root:{
-    color:' #484848',
-    backgroundColor: '#ffffff00',
+    color:' #022742',
+    background: 'linear-gradient(90.96deg, rgb(48 118 222 / 44%) 1.05%, rgb(241 108 11 / 32%) 99.89%);',
+
   },
   grow: {
     // flexGrow: 1,
@@ -48,28 +47,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
       width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
     },
   },
   sectionDesktop: {
@@ -173,21 +150,9 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-            <img src={Logo} alt='logo' height='35px'/>
+            <img src={Logo} alt='logo' height='35px'/> <b>Coined One</b>
           </IconButton>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search Activities"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
+          {/* For Checking previous Activity on a past date */}
             <div  >
               <div className='d-none d-sm-none d-md-none d-lg-block'>
                 <DatePickers/>

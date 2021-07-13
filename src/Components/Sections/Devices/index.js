@@ -8,12 +8,9 @@ import Carousel from '../../Utils/Carousel/Carousel';
 
 export default function Devices() {
     const actions = [
-        { icon: <LaptopIcon style={{ fontSize: 50 }}/>, name: 'My laprtop',usage:'10min' },
-        { icon: <PhoneAndroidIcon style={{ fontSize: 50 }} />, name: 'my phone',usage:'20min' },
-        { icon: <LaptopIcon style={{ fontSize: 50 }}/>, name: 'My laprtop',usage:'10min' },
-        { icon: <PhoneAndroidIcon style={{ fontSize: 50 }}/>, name: 'my phone',usage:'20min' },
-        { icon: <LaptopIcon style={{ fontSize: 50 }}/>, name: 'My laprtop',usage:'10min' },
-        { icon: <PhoneAndroidIcon style={{ fontSize: 50 }}/>, name: 'my phone',usage:'20min' },
+        { icon: <LaptopIcon style={{ fontSize: 50 }}/>, name: 'Aditya Laptop',usage:'10min' },
+        { icon: <PhoneAndroidIcon style={{ fontSize: 50 }} />, name: 'My Phone',usage:'20min' },
+        { icon: <LaptopIcon style={{ fontSize: 50 }}/>, name: 'My Laptop',usage:'10min' },
       ];
     return (
         <div className='p-3  screen-time 

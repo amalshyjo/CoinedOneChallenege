@@ -12,7 +12,10 @@ import React from 'react';
 import RadarChart from '../Charts/Radar';
 
 const useStyles = makeStyles((theme) => ({
+
   appBar: {
+    color:' #022742',
+    background: 'linear-gradient(90.96deg, rgb(48 118 222 / 44%) 1.05%, rgb(241 108 11 / 32%) 99.89%);',
     position: 'relative',
   },
   title: {
@@ -40,9 +43,11 @@ export default function Modal({Label,Value}) {
 
   return (
     <div>
-        <Button color='primary' onClick={handleClickOpen}>
+      <div className='d-flex justify-content-center  wt-100 '>
+      <Button className='text-center' color='primary' onClick={handleClickOpen}>
             <CompareIcon/> compare
         </Button>
+      </div>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
           <Toolbar>

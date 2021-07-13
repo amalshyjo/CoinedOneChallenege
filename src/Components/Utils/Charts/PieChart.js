@@ -18,47 +18,67 @@ const DoughnutChart = ({Label,Value,TitleValue,Title}) => {
         'rgb(201, 203, 207)',
         'rgb(54, 162, 235)'
       ]
-    }]
+    }],
+    hoverOffset: 4
   };
-  const plugins = [{
-    beforeDraw: function(chart) {
-      var width = chart.width,
-        height = chart.height,
-        ctx = chart.ctx;
-      ctx.restore();
-      var fontSize = (width / 300).toFixed(2);
-      ctx.font = fontSize + "em sans-serif";
-      ctx.textBaseline = "middle";
+  // const plugins = [{
+  //   beforeDraw: function(chart) {
+  //     var width = chart.width,
+  //       height = chart.height,
+  //       ctx = chart.ctx;
+  //     ctx.restore();
+  //     var fontSize = (width / 300).toFixed(2);
+  //     ctx.font = fontSize + "em sans-serif";
+  //     ctx.textBaseline = "middle";
 
-      var title = Title,
-          titletextX = Math.round((width - ctx.measureText(title).width) / 2),
-          titletextY = height / 1.9;
-      var value = `${TitleValue} mins`,
-          valuetextX = Math.round((width - ctx.measureText(value).width) / 2),
-          valuetextY = height / 1.7;
+  //     var title = Title,
+  //         titletextX = Math.round((width - ctx.measureText(title).width) / 2),
+  //         titletextY = height / 2.5;
+  //     var value = `${TitleValue} mins`,
+  //         valuetextX = Math.round((width - ctx.measureText(value).width) / 2),
+  //         valuetextY = height / 2;
 
-      ctx.fillText(title, titletextX, titletextY);
-      ctx.fillText(value, valuetextX, valuetextY);
-      ctx.save();
-    } 
-  }]
+  //     ctx.fillText(title, titletextX, titletextY);
+  //     ctx.fillText(value, valuetextX, valuetextY);
+  //     ctx.save();
+  //   } 
+  // }]
 
   return(
   <div className='inner'>
     <Doughnut data={Data}
-    plugins={plugins} 
+    // plugins={plugins} 
     options={{
+      borderWidth: 10,
+        cutout: '80%',
         plugins: {
             legend: {
+              
+              position:'bottom',
                 labels: {
                     font: {
                         size: 15
-                    }
+                    },
+                boxWidth: 20,
+                boxHeight: 20,
+                position: 'bottom',
                 }
             }
         },
     }}
     />
+    <div className='text-center' style={{
+        position:'absolute',
+        height: '100px',
+        width: '200px',
+        left: '50%',
+        marginLeft: '-90px',
+        top: '50%',
+        marginTop: '-30px'
+    }}>
+      <h2>{Title}</h2>
+      <h3>{TitleValue}</h3>
+    </div>
   </div>
 )};
 

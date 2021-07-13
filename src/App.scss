@@ -1,9 +1,9 @@
 body {
-  color: rgb(75, 75, 75);
-  background-color: #edeef0;
+  color: #022742;
+  background-color: #FEEFDD;
 }
 .txt-grey{
-  color: rgba(75, 75, 75, 0.925) !important;
+  color:#022742 !important;
 }
 .dash-board{
   height:90vh;
@@ -57,9 +57,12 @@ body {
 .slick-prev:before, .slick-next:before {
   color: black !important;
 }
-
+.MuiSpeedDialAction-fab {
+  color: #fff !important;
+  background-color: #3f51b5 !important;
+}
 
 a{
   text-decoration: none !important;
-  color: rgba(75, 75, 75, 0.925) !important;
+  color: #022742 !important;
 }
