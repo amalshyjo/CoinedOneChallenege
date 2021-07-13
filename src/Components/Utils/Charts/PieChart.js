@@ -72,9 +72,9 @@ const DoughnutChart = ({Label,Value,TitleValue,Title}) => {
         height: '100px',
         width: '200px',
         left: '50%',
-        marginLeft: '-90px',
+        marginLeft: '-95px',
         top: '50%',
-        marginTop: '-30px'
+        marginTop: '-35px'
     }}>
       <h2>{Title}</h2>
       <h3>{TitleValue}</h3>
